@@ -5,12 +5,11 @@
 
 import("stdfaust.lib");
 
-// _canale audio
-// + - * / operatori matematici 
+// _ canale audio
+// + - * / operatori matematici  + somma , - sotrazione , * moltiplicazione , / divisione
 // _:_ due punti flusso seriale
 // _,_ f virgola flusso parallelo
 // ogni riga finisce con un ; punto e virgola
 process = _+_ , _+_ , _ , _  ;
-
 
 			
