@@ -25,3 +25,4 @@ os.osc(freq) *(gain1),os.osc(freq*2) *(gain2),os.osc(freq*3) *(gain3),os.osc(fre
 //:> é il segno di combina o combine (in inglese),somma più segnali e li trasforma in un canale
 //si.bus creamo un numero canali indefinito scrivendo il numero di canali che ci serve nelle parentesi
 //per aggiungere il gain bisogna moltiplicarlo per freq
+// gli armonici hanno un numero finito cioè fino a 20000Hz,per scoprire quanti armonici possiamo udire con la nostra banda audio dobbiamo dividere 20000 per la frequenza fondamentale
