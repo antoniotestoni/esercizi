@@ -18,7 +18,7 @@ gain15 =vslider("[16]ampiezza15", 0., 0., 1., 0.01);
 gain16 =vslider("[17]ampiezza16", 0., 0., 1., 0.01);
 process =hgroup("banco di oscillatori armonici", 
 os.osc(freq) *(gain1),os.osc(freq*2) *(gain2),os.osc(freq*3) *(gain3),os.osc(freq*5) *(gain4),os.osc(freq*6) *(gain5),os.osc(freq*7) *(gain6),os.osc(freq*8) *(gain7),os.osc(freq*9) *(gain8),os.osc(freq*10) *(gain9),os.osc(freq*11) *(gain10),os.osc(freq*12) *(gain11),os.osc(freq*13) *(gain12),os.osc(freq*14) *(gain13),os.osc(freq*15) *(gain14),os.osc(freq*16) *(gain15),os.osc(freq*17) *(gain16)):> _ <:_,_;
-//vslider("frequenza",N,N,N,N) è pomello che serve per regolare la frequenza.primo numero indica la frequenza fondamentale, secondo numero la freq minima ,il terzo la freq massima e il quarto 
+//vslider("frequenza",N,N,N,N) è pomello che serve per regolare la frequenza.primo numero indica la frequenza fondamentale, secondo numero la freq minima ,il terzo la freq massima e il quarto indica le variazioni traa una frequenza e l altra 
 //osc(oscillatore) sta dendro la libreria os
 //fc>2fmax
 //<: è il segno del diviso o divide (in inglese),divide più segnali il segnale in entrata
