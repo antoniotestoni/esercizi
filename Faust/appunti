@@ -1,0 +1,21 @@
+/scrivi un programma che abbia un segnale elaborato da un filtro che elimini le freq. superiori a 666 herz
+// premere comand r quando esce stock overflow
+import("stdfaust.lib");
+order = 2;
+fcut = vslider("cut-off [style:knob][scale:exp]",666,20,20000,1);
+process = fi.highpass(order,fcut): fi.lowpass(order,fcut);
+
+
+
+import("stdfaust.lib");
+fcut = vslider("cut-off [style:knob][scale:exp]",1000,20,20000,1);
+order = 8;
+process = no.noise : fi.lowpass(order,fcut) : fi.highpass(order,fcut);
+//l'algoritmo genera numeri diversi ogni campione
+//in base alla frequenza di campionamento si genera ,per ogni campione ,un numero diverso.
+//l'oscilloscopio ci mostra l'onda nel dominio del tempo,i tempo è nell asse delle x e nelle y ..... .E'nella destra quando si preme run--->
+//lo spettroscopio mostra le variazioni di frequenza nell'ampiezza.Fa vedere il rumore che cambia in quel preciso momento
+//il rumore è un qualcosa che non trasmette informazioni o che non capiamo.
+//possiamo deffinire un generatore randomico un generatore di rumore.
+//il filtro lowpass si traduce in passabasso ,serve ad attenuare l'ampiezza delle frequenze sopra un punto di taglio
+//il filtro highpass si traduce in altobasso
