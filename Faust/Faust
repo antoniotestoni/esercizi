@@ -1,0 +1,19 @@
+import("stdfaust.lib"); 
+bpm2samp(n) = (60* ma.SR)/ (n):int ;
+// numero di sec per freq di campionamento tra parentesi, diviso numero dei rintocchi
+// sr sample rate 
+//con 60*ma.SR capiamo quanti numeri di campioni ci sono in un minuto 
+// :int significa che n deve essere un numero intero perchè se la divisione dà un numero con la virgola si deve fare intero.
+//ba.pulsen generatore di click a intervalli regolari a due argomenti ,grandezza click in questo caso 1 è il campione in quanti campioni avviene il click.Strumento che lavora alla dimensione del secondo
+//il campione è l unità più piccola che abbiamo nel ..... audio ed è in funzione della freq di campionamento
+//beat
+//(60* ma.SR) numero campioni presenti in un minuto
+//si moltiplica il beat per 2 per rallentare il tempo  esmp: bpm2samp((vslider("tempo[style:knob]", 60,30,344,0.1))*2);  o si divide per 2 il numero di campioni esmp:  :/(2) si mette alla fine
+//sumb si mette al posto di 2 ,è rappresenta la suddivisione valore secondo valore minimo il terzo valore massimo di suddivisione
+beat = bpm2samp(vslider("tempo[style:knob]", 60,30,344,0.1)): /(sumb);
+sumb = nentry("suddivisione",1,1,4,1);
+metronomo= ba.pulsen(1,beat): fi.highpass(128,1000);
+process = metronomo,metronomo;
+
+
+
